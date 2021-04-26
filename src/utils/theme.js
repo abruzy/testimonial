@@ -14,7 +14,7 @@ import {
 
 export const theme = createMuiTheme({
   typography: {
-    fontFamily: 'InterRegular, Arial, Milkshake, poppins900, poppins600'
+    fontFamily: 'InterRegular, Arial'
   },
   overrides: {
     MuiCssBaseline: {
