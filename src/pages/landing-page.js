@@ -235,7 +235,7 @@ const LandingPage = () => {
             can share your stories with us too.
           </Box>
         </Box>
-        <Box component='img' src='/images/Group 81.svg' />
+        <Box component='img' src='/images/Group 81.svg' maxWidth='100%' />
       </Box>
 
       <Box className={classes.customer}>
@@ -273,7 +273,7 @@ const LandingPage = () => {
             >
               Share your own story!
             </Box>
-            <Box component='img' src='/images/Vector 3.svg' />
+            <Box component='img' src='/images/Vector 3.svg' maxWidth='100%' />
           </Box>
         </Box>
       </Box>

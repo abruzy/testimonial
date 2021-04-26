@@ -11,17 +11,23 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    position: 'relative',
     height: '50vh',
+    paddingLeft: 224,
+    paddingRight: 480,
     [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column'
+      flexDirection: 'column-reverse',
+      padding: '0 30px',
+      height: '100%'
     }
   },
   formContainer: {
     padding: '0.25rem',
     display: 'flex',
     background: 'rgba(255, 255, 255, 0.2);',
-    borderRadius: 6
+    borderRadius: 6,
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: 70
+    }
   },
   inputField: {
     padding: '0 0.75rem',
@@ -36,6 +42,38 @@ const useStyles = makeStyles(theme => ({
     fontWeight: '500',
     backgroundColor: 'white',
     padding: '13px 24px'
+  },
+  footerContent: {
+    display: 'flex',
+    justifyContent: 'center',
+    [theme.breakpoints.down('sm')]: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(2, 1fr)',
+      placeItems: 'center',
+      gridGap: '2rem'
+    }
+  },
+  newsLetterContent: {
+    marginTop: -160,
+    marginLeft: 'auto',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: 0
+    }
+  },
+  newsHeading: {
+    color: 'white',
+    fontSize: 40,
+    fontWeight: 700,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 30
+    }
+  },
+  footerLinks: {
+    color: 'white',
+    paddingRight: 120,
+    [theme.breakpoints.down('sm')]: {
+      paddingRight: 0
+    }
   }
 }))
 
@@ -44,19 +82,18 @@ const Footer = () => {
 
   return (
     <Box className={classes.footerContainer}>
-      <Box pl={28} pr={60} className={classes.newsLetter}>
+      <Box className={classes.newsLetter}>
         <Box
           component='img'
           src='/images/subscribe-banner 1.svg'
           alt='subscribe banner'
-          position='absolute'
-          top='-50px'
+          maxWidth='100%'
         />
-        <Box ml='auto' mt={-20}>
-          <Box component='h1' color='white' fontSize='40px' fontWeight='700'>
+        <Box className={classes.newsLetterContent}>
+          <Box component='h1' className={classes.newsHeading}>
             Be a member <br /> of our community 🎉
           </Box>
-          <Box component='p' color='white' fontSize='14px' fontWeight='400'>
+          <Box component='p' color='white' fontSize='13px' fontWeight='400'>
             We’d make sure you’re always first to know what’s <br /> happening
             on Vasiti—thus, the world.
           </Box>
@@ -73,8 +110,8 @@ const Footer = () => {
           </form>
         </Box>
       </Box>
-      <Box display='flex' justifyContent='center'>
-        <Box pr={15} color='white'>
+      <Box className={classes.footerContent}>
+        <Box className={classes.footerLinks}>
           <Box component='h3'>Company</Box>
           <Typography>About us</Typography>
           <Typography>Term of Use</Typography>
@@ -82,7 +119,7 @@ const Footer = () => {
           <Typography>Press & Media</Typography>
         </Box>
 
-        <Box pr={15} color='white'>
+        <Box className={classes.footerLinks}>
           <Box component='h3'>Products</Box>
           <Typography>About us</Typography>
           <Typography>Term of Use</Typography>
@@ -90,7 +127,7 @@ const Footer = () => {
           <Typography>Press & Media</Typography>
         </Box>
 
-        <Box pr={15} color='white'>
+        <Box className={classes.footerLinks}>
           <Box component='h3'>Careers</Box>
           <Typography>About us</Typography>
           <Typography>Term of Use</Typography>
@@ -98,16 +135,8 @@ const Footer = () => {
           <Typography>Press & Media</Typography>
         </Box>
 
-        <Box pr={15} color='white'>
+        <Box className={classes.footerLinks}>
           <Box component='h3'>Get in touch</Box>
-          <Typography>About us</Typography>
-          <Typography>Term of Use</Typography>
-          <Typography>Privacy Policy</Typography>
-          <Typography>Press & Media</Typography>
-        </Box>
-
-        <Box pr={15} color='white'>
-          <Box component='h3'>Join our community</Box>
           <Typography>About us</Typography>
           <Typography>Term of Use</Typography>
           <Typography>Privacy Policy</Typography>
